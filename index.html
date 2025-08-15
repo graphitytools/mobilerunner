@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <style></style>
-    <title>Mobile Runnner</title>
+    <title>Mobile Runner</title>
         <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="ABP Live Independence Day" />
     <meta property="og:description" content="Join the Dash for Freedom - a thrilling run to host the flag at the iconic Red Fort, celebrating unity, courage, and the spirit of independence" />
@@ -19,6 +19,23 @@
     <script src="__start__.js"></script>
     <script src="__loading__.js"></script>
     <script defer src="https://abpminigames.com/_vercel/insights/script.js"></script>
-    <Analytics endpoint="https://abpminigames.com/_vercel/insights" />
+//fetch this api "https://abpminigames.com/_vercel/insights/view"
+<script>
+    //just a simple get request
+    fetch("https://abpminigames.com/_vercel/insights/view", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("Data fetched successfully:", data);
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
+
+</script>
 </body>
 </html>
